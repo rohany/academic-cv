@@ -1,0 +1,349 @@
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[10pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% moderncv themes
+\moderncvstyle{casual}                             % style options are 'casual' (default), 'classic', 'banking', 'oldstyle' and 'fancy'
+\moderncvcolor{blue}                               % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.9]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+% \usepackage{xpatch}
+
+\usepackage{makecell}
+
+% \xpatchcmd\cventry{,}{}{}{}
+
+\newcommand*{\cventrynocomma}[7][.25em]{%
+  \cvitem[#1]{#2}{%
+    {\bfseries#3}%
+    \ifthenelse{\equal{#4}{}}{}{ {\slshape#4}}%
+    \ifthenelse{\equal{#5}{}}{}{ #5}%
+    \ifthenelse{\equal{#6}{}}{}{ #6}%
+    \strut%
+    \ifx&#7&%
+      \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi}}
+      
+% personal data
+\name{Rohan}{Yadav}
+\email{rohany@cs.stanford.edu}                               % optional, remove / comment the line if not wanted
+\homepage{rohany.github.io}                         % optional, remove / comment the line if not wanted
+
+% bibliography adjustements (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Education}
+\cventry{2020--2026 (expected)}{Ph.D. in Computer Science}{Stanford University}{Stanford, CA}{}{
+Advised by Alex Aiken and Fredrik Kjolstad
+}
+\cventry{2015--2019}{BS in Computer Science}{Carnegie Mellon University}{Pittsburgh, PA}{}
+{
+Advised by Umut Acar\\
+%Minor in Machine Learning\\
+Dean's List, University and SCS College Honors
+% \\
+% Selected Coursework:
+% Algorithm Design and Analysis,
+% Parallel Computer Architecture,
+% Compiler Design,
+% Optimizing Compilers for Modern Architectures,
+% Complexity Theory,
+% Distributed Systems,
+% Programming Language Theory,
+% Algorithms in the Real World,
+% Reinforcement Learning
+}
+
+\section{Research Experience}
+
+\cventry{2020-Present}{PhD Student Researcher}{Stanford}{Stanford}{CA}{
+\begin{itemize}
+    \item Researched programming systems for high performance computers under
+        Professors Alex Aiken and Fredrik Kjolstad.
+\end{itemize}
+}
+
+\cventry{2022-Present}{Part-Time Researcher}{NVIDIA}{Santa Clara}{CA} {
+\begin{itemize}
+    \item Researched programming systems for modern GPUs and GPU clusters
+        in the Programming Systems and Applications group under Michael Bauer and Michael Garland.
+    \item Performed tech-transfer and collaboration with the Legate product group.
+\end{itemize}
+}
+
+\cventry{2017-2019}{Undergraduate Researcher}{Carnegie Mellon University}{Pittsburgh}{PA}{
+\begin{itemize}
+\item Researched memory management techniques for parallel functional programming
+    languages under Professor Umut Acar.
+\end{itemize}
+}
+
+% \section{Experience}
+% 
+% \cventry{2023-Present}{Part-time Researcher}{NVIDIA}{Santa Clara}{CA}{
+% \begin{itemize}
+% \item Working on parallel programming systems.
+% \end{itemize}
+% }
+% 
+% \cventry{2024}{Research Intern}{NVIDIA}{Santa Clara}{CA}{
+% \begin{itemize}
+% \item Researching techniques to effectively program emerging GPU architectures.
+% \end{itemize}
+% }
+% 
+% 
+% \cventry{2023}{Research Intern}{NVIDIA}{Santa Clara}{CA}{
+% \begin{itemize}
+% \item Researching compilation-based techniques to compose parallel programs in the Legate framework.
+% \end{itemize}
+% }
+% 
+% \cventry{2022}{Research Intern}{NVIDIA}{Santa Clara}{CA}{
+% \begin{itemize}
+% \item Developed \texttt{legate.sparse}, a distributed and accelerated drop-in replacement for \texttt{scipy.sparse}.
+% \end{itemize}
+% }
+% 
+% }
+% \cventrynocomma{}{Selected Skills}{}{C/C++, Go, OCaml, Python, CUDA, Rust}{}{}
+
+% \section{Selected Research Projects}
+% \cventrynocomma{2025}{Overheads in Task-Based Runtime Systems}{with Michael Bauer, Joseph Guman, Michael Garland, Alex Aiken, Fredrik Kjolstad}{}{}{
+% Developed techniques to enable task-based runtime systems to support fine-grained heterogenous
+% workloads with performance competitive to low-level systems like MPI through a theoretical
+% connection to actor-based programming models.
+% }
+% \cventrynocomma{2024}{Programming Languages for Tensor Core GPUs}{with Michael Bauer, Alex Aiken, Michael Garland}{}{}{
+% Developing programming language techniques to manage the asynchrony and hierarchy in modern GPUs that contain accelerators
+% within the SM, such as the Tensor Core and TMA within the Hopper GPU architecture.
+% }
+% \cventrynocomma{2024}{Automatic Tracing in Task-Based Runtime Systems}{with Michael Bauer, David Broman, Michael Garland, Alex Aiken, Fredrik Kjolstad}{}{}{
+% Developed dynamic program analyses to automatically apply the tracing optimization in task-based runtime systems,
+% enabling significantly reduced runtime overhead at scale in complex distributed applications.
+% }
+% \cventrynocomma{2023}{Composing Distributed Computations Through Task and Kernel Fusion}{with Michael Bauer, Shiv Sundram, Wonchan Lee, Michael Garland, Alex Aiken, Fredrik Kjolstad}{}{}{
+% Developed dynamic program analysis techniques to fuse computations across library boundaries on distributed machines,
+% enabling applications built through the composition of high-level libraries to approach the performance of hand-written code.
+% }
+% \cventrynocomma{2022}{Legate Sparse}{with Michael Bauer, Wonchan Lee, Manolis Papadakis, Melih Elibol, Michael Garland}{}{}{
+% Developing \texttt{legate.sparse} a distributed and GPU-accelerated drop-in replacement for \texttt{scipy.sparse}, enabling
+% supercomputer scale performance from high-level Python code.
+% }
+% \cventrynocomma{2021-2022}{Compiling Tensor Computations to Supercomputers}{with Fred Kjolstad, Alex Aiken}{}{}{
+% Developed DISTAL, a compiler for sparse and dense tensor algebra that targets distributed systems.
+% }
+% \cventrynocomma{2020}{Automated Mapping of Computation and Data}{with Alexandra Henzinger, Thiago Teixeira, Alex Aiken}{}{}{
+% Developed system to automatically discover strategies for mapping computation and data onto different processors
+% and memories in a heterogenous system.
+% }
+% \cventrynocomma{2018-2019}{Disentanglement}{with Sam Westrick, Umut Acar}{}{}{
+% Designed efficient memory management systems for the memory access patterns of fork-join parallel programs.
+% }
+
+\section{Publications}
+\subsection{Refereed Conference Papers}
+
+\cventrynocomma{PLDI 2025}{Task-Based Tensor Computations on Modern GPUs.}{\textbf{Rohan Yadav}, Michael Garland, Alex Aiken, Michael Bauer}{}{}{}
+\cventrynocomma{ASPLOS 2025}{Automatic Tracing in Task-Based Runtime Systems.}{\textbf{Rohan Yadav}, Michael Bauer, David Broman, Michael Garland, Alex Aiken, Fredrik Kjolstad}{}{}{}
+\cventrynocomma{ASPLOS 2025}{Composing Distributed Computations Through Task and Kernel Fusion.}{\textbf{Rohan Yadav}, Shiv Sundram, Wonchan Lee, Michael Garland, Michael Bauer, Alex Aiken, Fredrik Kjolstad}{}{}{}
+\cventrynocomma{ICML 2025}{Improving Parallel Program Performance with LLM Optimizers via Agent-System Interfaces.}{Anjiang Wei, Allen Nie, Thiago Teixeira, \textbf{Rohan Yadav}, Wonchan Lee, Ke Wang, Alex Aiken}{}{}{}
+\cventrynocomma{SC 2023}{Legate Sparse: Distributed Sparse Computing in Python.}{\textbf{Rohan Yadav}, Wonchan Lee, Melih Elibol, Manolis Papadakis, Taylor Lee-Patti, Michael Garland, Alex Aiken, Fredrik Kjolstad, Michael Bauer}{}{}{}
+\cventrynocomma{SC 2023}{Automated Mapping of Task-Based Programs onto Distributed and Heterogenous Machines.}{Thiago S. F. X. Teixeira, Alexandra Henzinger, \textbf{Rohan Yadav}, Alex Aiken}{}{}{}
+\cventrynocomma{SC 2022}{SpDISTAL: Compiling Sparse Distributed Tensor Computations.}{\textbf{Rohan Yadav}, Alex Aiken, Fredrik Kjolstad}{}{}{}
+\cventrynocomma{PLDI 2022}{DISTAL: The Distributed Tensor Algebra Compiler.}{\textbf{Rohan Yadav}, Alex Aiken, Fredrik Kjolstad}{}{}{}
+\cventrynocomma{OOPLSA 2021}{Compilation of Sparse Array Programming Models.}{Rawn Henry, Olivia Hsu, \textbf{Rohan Yadav}, Stephen Chou, Kunle Olukotun, Saman Amarasinghe, Fredrik Kjolstad}{}{}{}
+\cventrynocomma{POPL 2020}{Disentanglement in Race-Free Nested Parallel Programs.}{Sam Westrick, \textbf{Rohan Yadav}, Matthew Fluet, Umut A. Acar}{}{}{}
+\cventrynocomma{SPAA 2019}{Brief Announcement: A Parallel Algorithm for Subgraph Isomorphism.}{\textbf{Rohan Yadav}, Umut A. Acar}{}{}{}
+
+\subsection{Refereed Workshop Papers}
+
+\cventrynocomma{PAW-ATM 2025}{KDRSolvers: Scalable, Flexible, Task-Oriented Krylov Solvers.}{David Zhang, \textbf{Rohan Yadav}, Alex Aiken, Fredrik Kjolstad, Sean Triechler}{}{}{}
+
+\subsection{Under Review and In Progress}
+
+\cventrynocomma{}{On The Duality of Task And Actor Programming Models.}{\textbf{Rohan Yadav}, Joseph Guman, Sean Treichler, Michael Garland, Alex Aiken, Fredrik Kjolstad, Michael Bauer}{}{}{}
+
+\cventrynocomma{}{Mapple: A Domain-Specific Language for Mapping Distributed Heterogeneous Parallel Programs.}{Anjiang Wei, \textbf{Rohan Yadav}, Hang Song, Wonchan Lee, Ke Wang, Alex Aiken}{}{}{}
+
+\subsection{Degree Theses}
+
+\cventrynocomma{Undergraduate Thesis}{Disentanglement, Theory and Practice.}{Rohan Yadav}{}{}{}
+
+\section{Teaching}
+\cventrynocomma{2025}{Teaching Assistant}{Stanford CS242}{Programming Languages}{}{}{}
+\cventrynocomma{2023}{Teaching Assistant}{Stanford CS143}{Compilers}{}{}{}
+\cventrynocomma{2021-2022}{Teaching Assistant}{Stanford CS242}{Programming Languages}{}{}{}
+\cventrynocomma{2017-2018}{Head Teaching Assistant}{CMU 15210}{Parallel Algorithms and Data Structures}{}{}{}
+\cventrynocomma{2016}{Teaching Assistant}{CMU 15150}{Functional Programming}{}{}{}
+\cventrynocomma{2018-2020}{Diderot}{}{}{}{
+Developed and maintained a new course management platform, used by 1500 students daily at CMU at its peak.
+}
+
+\section{Mentoring}
+\cventrynocomma{2025}{Ahmad Zafar}{Stanford BS}{}{}{
+Integrating METIS-based partitioning methods into the Legion programming ecosystem.
+}
+\cventrynocomma{2025}{Rohan Chanani}{Stanford BS}{}{}{
+GPU accelerating partitioning computations within the Legion runtime system.
+}
+\cventrynocomma{2024}{Joseph Guman}{Stanford BS and MS, 2024. Now: NVIDIA}{}{}{
+Static specialization techniques to reduce overhead in distributed runtime systems.
+}
+\cventrynocomma{2024}{Alexander Waitz}{Stanford BS}{}{}{
+Programmatic interaction with the Legion Profiler.
+}
+
+\section{Honors and Awards}
+\cventrynocomma{2024}{}{}{Jane Street Graduate Research Fellowship (Finalist)}{}{}
+\cventrynocomma{2023}{}{}{NVIDIA Graduate Research Fellowship}{}{}
+\cventrynocomma{2020}{}{}{NSF Graduate Research Fellowship}{}{}
+\cventrynocomma{2019}{}{}{CRA Outstanding Undergraduate Researcher Nominee}{}{}
+\cventrynocomma{2019}{}{}{Carnegie Mellon Senior Leadership Recognition}{}{}
+\cventrynocomma{2015}{}{}{Presidential Scholar Semifinalist}{}{}
+
+\section{Work Experience}
+
+\cventry{2019-2020}{Software Engineer}{Cockroach Labs}{New York}{NY}{
+\begin{itemize}
+\item Improved stability and performance of CockroachDB's distributed SQL engine and schema management infrastructure.
+\item Contributed to development of a variety of large features in CockroachDB including
+ENUM types, User Defined Schemas, and Online Primary Key Changes.
+\end{itemize}
+}
+% \cventry{2019}{Software Engineering Intern}{Cockroach Labs}{New York}{NY}{
+% \begin{itemize}
+% \item Development on CockroachDB's distributed SQL execution engine
+% \item Implemented new SQL operators for the row-by-row and vectorized execution engine
+% \end{itemize}
+% }
+\cventry{2018}{Software Engineering Intern}{Uber Advanced Technologies Group}{San Francisco}{CA}{
+\begin{itemize}
+\item Developed infrastructure for a
+migration from an internal data center to AWS.
+\item Implemented a file access system within AWS for integration
+with existing data center services.
+\item Dramatically enhanced scalability of batch compute jobs
+processing internal data.
+\end{itemize}
+}
+\cventry{2017}{Software Engineering Intern}{Facebook}{Menlo Park}{CA}{
+\begin{itemize}
+\item Developed system to perform disruptive upgrades on network switches.
+\item Added packet subscription service for network switch agent debugging and maintenance.
+\end{itemize}
+}
+
+\section{Talks}
+\cventrynocomma{}{Task Based Tensor Computations on Modern GPUs}{}{}{}{}
+\cvlistitem{Stanford Portal Affiliates Meeting, June 2025}
+\cvlistitem{PLDI 2025, June 2025}
+\cventrynocomma{}{Automatic Tracing in Task-Based Runtime Systems}{}{}{}{}
+\cvlistitem{ASPLOS 2025, April 2025}
+\cventrynocomma{}{Computing Distributed Computations Through Task and Kernel Fusion}{}{}{}{}
+\cvlistitem{ASPLOS 2025, April 2025}
+\cvlistitem{Charm++ Workshop 2024, April 2024}
+\cventrynocomma{}{Legate Sparse: Distributed and Accelerated Sparse Computing in Python}{}{}{}{}
+\cvlistitem{SIAM Parallel Processing, March 2024}
+\cvlistitem{UW PLSE Seminar, December 2023}
+\cvlistitem{SC 2023, November 2023}
+\cvlistitem{UIUC Compilers Seminar, October 2023}
+\cvlistitem{MIT Fast Code Seminar, October 2023}
+\cvlistitem{CMU Catalyst Group Meeting, October 2023}
+\cvlistitem{Berkeley Programming Systems Seminar, September 2023}
+\cvlistitem{Stanford HPC-AI Advisory Council, February 2023}
+\cventrynocomma{}{SpDISTAL: Compiling Sparse Distributed Tensor Computations}{}{}{}{}
+\cvlistitem{Legion Retreat, December 2022}
+\cvlistitem{AHA Affiliates Retreat, December 2022}
+\cvlistitem{SC 2022, November 2022}
+\cvlistitem{Stanford Software Research Lunch, April 2022}
+\cventrynocomma{}{DISTAL: The Distributed Tensor Algebra Compiler}{}{}{}{}
+\cvlistitem{Google Research, November 2022 (Invited)}
+\cvlistitem{PLDI 2022, June 2022}
+\cvlistitem{Vienna University of Technology, April 2022 (Invited)}
+\cvlistitem{Stanford Agile Hardware Project Group Meeting, Jan 2022}
+\cvlistitem{Cerebras Systems, Dec 2021 (Invited)}
+\cvlistitem{Oxford Tensor Computations Seminar, Nov 2021}
+\cvlistitem{Stanford Software Research Lunch, Nov 2021}
+\cventrynocomma{}{On the Automated Mapping of Computation and Data Onto Heterogenous Machines}{}{}{}{}
+\cvlistitem{Stanford Software Research Lunch, Feb 2021}
+\cvlistitem{Legion Developer Meeting, Jan 2021}
+\cventrynocomma{}{A Parallel Algorithm for Subgraph Isomorphism}{}{}{}{}
+\cvlistitem{SPAA 2019, Jun 2019}
+\cventrynocomma{}{Disentanglement, Theory and Practice}{}{}{}{}
+\cvlistitem{CMU Meeting of the Minds, May 2019}
+
+\section{Professional Service}
+\cventrynocomma{2025}{JDPC External Reviewer}{}{}{}{}
+\cventrynocomma{2025}{SPAA'25 Program Committee}{}{}{}{}
+\cventrynocomma{2024-}{Stanford Software Research Lunch Organizer}{}{}{}{}
+\cventrynocomma{2024}{Stanford Faculty Hiring Committee}{}{}{}{}
+
+\section{References}
+\small{
+    \begin{tabular}{p{10cm}p{10cm}}
+        \makecell[l]{ \textbf{Alex Aiken} \\
+   Professor of Computer Science \\
+   Stanford University \\
+   \href{mailto:aaiken@stanford.edu}{aaiken@stanford.edu}\\
+   \textit{Relationship: Thesis Advisor}}  &
+   \makecell[l]{ \textbf{Fredrik Kjolstad} \\
+   Assistant Professor of Computer Science \\
+   Stanford University \\
+   \href{mailto:kjolstad@stanford.edu}{kjolstad@stanford.edu} \\
+   \textit{Relationship: Thesis Advisor}}
+   \\
+   \\
+   \makecell[l]{ \textbf{Michael Garland} \\
+   Director of Programming Systems and Applications Research \\
+   NVIDIA \\
+   \href{mailto:mgarland@nvidia.com}{mgarland@nvidia.com}\\
+   \textit{Relationship: Research Mentor}}
+    &
+    \makecell[l]{ \textbf{Michael Bauer} \\
+   Principal Research Scientist  \\
+   NVIDIA \\
+   \href{mailto:mbauer@nvidia.com}{mbauer@nvidia.com}\\
+   \textit{Relationship: Research Mentor}} \\
+    \end{tabular}
+}
+
+
+% Publications from a BibTeX file using the multibib package
+%\section{Publications}
+%\nocitebook{book1,book2}
+%\bibliographystylebook{plain}
+%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
+%\nocitemisc{misc1,misc2,misc3}
+%\bibliographystylemisc{plain}
+%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
+
+% \clearpage
+\end{document}
